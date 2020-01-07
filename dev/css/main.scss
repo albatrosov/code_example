@@ -1,0 +1,143 @@
+html {
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	color: #303030;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+	max-width: 1160px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+@media(max-width: 1100px){
+  .wrapper{
+		padding: 0 30px;
+	}
+}
+
+@media(max-width: 700px){
+	.wrapper{
+		padding: 0 15px;
+	}
+}
+
+h1{
+	font-size: 30px;
+	line-height: 38px;
+	letter-spacing: -1.27px;
+}
+
+h2{
+
+}
+
+h3{
+	font-size: 22px;
+	line-height: 34px;
+	letter-spacing: -0.5px;
+}
+
+h4{
+	font-size: 14px;
+	line-height: 20px;
+	color: #999;
+	text-transform: uppercase;
+	letter-spacing: 1.08px;
+}
+
+@media(max-width: 700px){
+	h1{
+		font-size: 26px;
+	}
+}
+
+.btn {
+	display: block;
+	width: 100%;
+	max-width: 360px;
+	height: 51px;
+	line-height: 51px;
+	box-sizing: border-box;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	font-size: 16px;
+	text-decoration: none;	
+	font-weight: 700;
+	transition: all .3s ease;
+	background-color: #0AD9C6;
+	cursor: pointer;
+	&[type="submit"]{
+		line-height: initial;
+	}
+	&:hover {
+		transition: all .3s ease;
+		background-color: #0df0d9;
+	}
+}
+
+// простейшая сетка, которой пользовался в проектах
+.flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&--2{
+		.item {
+			width: 48%;
+		}
+	}
+	&--3{
+		.item {
+			width: 30%;
+		}
+	}
+	&--4{
+		.item {
+			width: 22%;
+		}
+	}
+	&--5{
+		.item {
+			width: 18%;
+		}
+	}
+	&--6{
+		.item {
+			width: 13%;
+		}
+	}
+}
+
+@media(max-width: 1200px) {
+	.flex{
+		.item{
+			width: 48%;
+		}
+	}
+}
+
+@media(max-width: 600px) {
+	.flex{
+		.item{
+			width: 100%;
+		}
+	}
+}
+
+.err {
+	border: 1px solid red !important;
+}
+
+// iOS
+input[type="submit"]{
+	appearance: none;
+}

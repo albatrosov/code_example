@@ -1,0 +1,90 @@
+@import '../variables';
+@import '../mixins';
+
+.features{
+  padding: 70px 0;
+  .wrapper{
+    max-width: 1065px;
+  }
+  .feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &__img{
+      width: 59%;
+      img{
+        width: 100%;
+        display: block;
+      }
+    }
+    &__text{
+      width: 370px;
+      h3{
+        margin-bottom: 30px;
+      }
+      p{
+        @include text--main;
+        color: $text--grey;
+      }
+    }
+  }
+}
+
+@media(max-width: 1100px){
+  .features{
+    padding: 40px 0;
+    .feature{
+      align-items: unset; // img height == text height
+      margin-bottom: 30px;
+      /*
+      картинки в мобильных версиях выглядят немного не так как на макете
+      в этом случае обратился бы к дизайнеру с вопросом о замене картинок или 
+      каких-то изменениях в дизайне, если нужна была бы похожесть
+
+      если прям нет вариантов, то сделал бы просто два <img> и один бы показывал 
+      на десктопе, другой - на телефонах
+      */
+      &__img{
+        width: 49%; // просто посчитал соотношения по размерам макета
+        order: 1;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__text{
+        order: 2;
+        width: 44%;
+        p{
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 700px){
+  .features{
+    .feature{
+      flex-direction: column;
+      margin-bottom: 40px;
+      &__img{
+        width: 100%;
+      }
+      &__text{
+        width: 100%;
+        h3{
+          margin: 20px 0 15px;
+        }
+        p{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
